@@ -24,12 +24,19 @@ img {
 
 .exercice {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 2rem;
+  grid-template-areas: 
+    "completo"
+    "piezas";
+}
+
+.exercice-complete {
+  grid-area: completo;
 }
 
 .excercice-incomplete {
+  grid-area: piezas;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5px;
@@ -40,6 +47,7 @@ img {
 @media (min-width: 768px) {
   .exercice {
     grid-template-columns: 1fr 1fr;
+    grid-template-areas: "completo piezas";
     align-items: center;
   }
 }
