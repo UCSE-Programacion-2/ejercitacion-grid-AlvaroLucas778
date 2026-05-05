@@ -24,8 +24,8 @@ img {
 
 .exercice {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-top: 2rem;
 }
 
@@ -39,6 +39,7 @@ img {
 
 @media (min-width: 768px) {
   .exercice {
+    grid-template-columns: 1fr 1fr;
     align-items: center;
   }
 }
