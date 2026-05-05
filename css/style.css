@@ -22,17 +22,10 @@ img {
   height: auto;
 }
 
-/* TODO alumno:
-   Aplicar Grid en .exercice y .excercice-incomplete
-   con enfoque Mobile First + media queries.
-*/
-/* --- Estructura Principal --- */
-
-/* --- Estructura Principal --- */
 .exercice {
   display: grid;
   gap: 2rem;
-  grid-template-columns: 1fr; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-top: 2rem;
 }
 
@@ -46,13 +39,11 @@ img {
 
 @media (min-width: 768px) {
   .exercice {
-   
-    grid-auto-flow: column; 
-    grid-template-columns: repeat(2, 1fr); 
+    align-items: center;
   }
 }
 
-.grid-one   { grid-area: 1 / 1; }
-.grid-two   { grid-area: 1 / 2; }
+.grid-one { grid-area: 1 / 1; }
+.grid-two { grid-area: 1 / 2; }
 .grid-three { grid-area: 2 / 1; }
-.grid-four  { grid-area: 2 / 2; }
+.grid-four { grid-area: 2 / 2; }
