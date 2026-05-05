@@ -22,7 +22,37 @@ img {
   height: auto;
 }
 
-/* TODO alumno:
-   Aplicar Grid en .exercice y .excercice-incomplete
-   con enfoque Mobile First + media queries.
-*/
+.exercice {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+  grid-template-areas: 
+    "completo"
+    "piezas";
+}
+
+.exercice-complete {
+  grid-area: completo;
+}
+
+.excercice-incomplete {
+  grid-area: piezas;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  background-color: #ddd;
+  padding: 5px;
+}
+
+@media (min-width: 768px) {
+  .exercice {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "completo piezas";
+    align-items: center;
+  }
+}
+
+.grid-one { grid-area: 1 / 1; }
+.grid-two { grid-area: 1 / 2; }
+.grid-three { grid-area: 2 / 1; }
+.grid-four { grid-area: 2 / 2; }
